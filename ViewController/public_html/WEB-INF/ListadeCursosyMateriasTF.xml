@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="ListadeCursosyMateriasTF">
+    <default-activity>CursosyMaterias</default-activity>
+    <transaction>
+      <new-transaction/>
+    </transaction>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <task-flow-reentry>
+      <reentry-allowed/>
+    </task-flow-reentry>
+    <managed-bean id="__8">
+      <managed-bean-name>materiasennuevo</managed-bean-name>
+      <managed-bean-class>view.materiasennuevo</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <view id="CursosyMaterias">
+      <page>/CursosyMaterias.jsff</page>
+    </view>
+    <view id="Modificar">
+      <page>/Modificar.jsff</page>
+    </view>
+    <view id="Nuevo">
+      <page>/Nuevo.jsff</page>
+    </view>
+    <task-flow-return id="Commit">
+      <outcome>
+        <name>Commit</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Rollback">
+      <outcome>
+        <name>Rollback</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__1">
+      <from-activity-id>CursosyMaterias</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>Modificar</from-outcome>
+        <to-activity-id>Modificar</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>Nuevo</from-outcome>
+        <to-activity-id>Nuevo</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__9">
+        <from-outcome>ConfirmarReturn</from-outcome>
+        <to-activity-id>Commit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome>CancelarReturn</from-outcome>
+        <to-activity-id>Rollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>Modificar</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>ConfirmarModificacion</from-outcome>
+        <to-activity-id>CursosyMaterias</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>Nuevo</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>ConfirmarNuevo</from-outcome>
+        <to-activity-id>CursosyMaterias</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

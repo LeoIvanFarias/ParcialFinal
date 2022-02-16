@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Modelo"
+  Version="12.2.1.11.57"
+  SeparateXMLFiles="true"
+  PackageName="modelo">
+  <DesignTime>
+    <Attr Name="_DTExpressionTypeChecking" Value="true"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
+    <Attr Name="_jprName" Value="../../Modelo.jpr"/>
+    <Attr Name="_NamedConnection" Value="ConexionRepasoFinal"/>
+    <Attr Name="_appModuleNames0" Value="modelo.AppModuleCursos"/>
+    <Attr Name="_appModuleNames1" Value="modelo.AppModuleMaterias"/>
+  </DesignTime>
+  <Containee
+    Name="asosiaciones"
+    PackageName="modelo.asosiaciones"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="entidades"
+    PackageName="modelo.entidades"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="Link"
+    PackageName="modelo.Link"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="modelo"
+    PackageName="modelo"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="vistas"
+    PackageName="modelo.vistas"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+</JboProject>

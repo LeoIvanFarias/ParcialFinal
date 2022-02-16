@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="CursosyMateriasPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CursosView1" RangeSize="25" DataControl="AppModuleCursosDataControl" id="CursosView1Iterator"/>
+    <iterator Binds="MateriasView2" RangeSize="25" DataControl="AppModuleCursosDataControl" id="MateriasView2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CursosView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CursosView1Iterator" id="Nombre">
+      <AttrNames>
+        <Item Value="Nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CursosView1Iterator" id="Duracion">
+      <AttrNames>
+        <Item Value="Duracion"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CursosView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="CursosView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="CursosView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="CursosView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="CursosView1Iterator" id="CreateWithParams" RequiresUpdateModel="true"
+            Action="createWithParams"/>
+    <action IterBinding="CursosView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="MateriasView2Iterator" id="MateriasView2">
+      <nodeDefinition DefName="modelo.vistas.MateriasView" Name="MateriasView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Nombre"/>
+          <Item Value="Duracion"/>
+          <Item Value="CursoId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="AppModuleCursosDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleCursosDataControl"/>
+  </bindings>
+</pageDefinition>

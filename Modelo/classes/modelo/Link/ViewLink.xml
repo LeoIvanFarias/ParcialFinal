@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ViewLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="modelo.Link.ViewLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="CursosView"
+    Cardinality="1"
+    Source="true"
+    Owner="modelo.vistas.CursosView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="CursosView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="modelo.vistas.CursosView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="MateriasView"
+    Cardinality="-1"
+    Owner="modelo.vistas.MateriasView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="MateriasView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="modelo.vistas.MateriasView.CursoId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="modelo.ModeloBundle"/>
+  </ResourceBundle>
+</ViewLink>

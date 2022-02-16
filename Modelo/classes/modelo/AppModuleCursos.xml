@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModuleCursos"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="CursosView1"
+    ViewObjectName="modelo.vistas.CursosView"/>
+  <ViewUsage
+    Name="MateriasView2"
+    ViewObjectName="modelo.vistas.MateriasView"/>
+  <ViewLinkUsage
+    Name="ViewLink1"
+    ViewLinkObjectName="modelo.Link.ViewLink"
+    SrcViewUsageName="modelo.AppModuleCursos.CursosView1"
+    DstViewUsageName="modelo.AppModuleCursos.MateriasView2"
+    Reversed="false"/>
+</AppModule>
